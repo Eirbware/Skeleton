@@ -1,5 +1,6 @@
 <?php
 require_once('/net/web/core/autoload.php');
+require_once(__DIR__.'/classes/Model.php');
 
 /**
  * Configuration de l'application
@@ -35,9 +36,8 @@ $app->connectDb(
 /**
  * Inclusion du modèle
  */
-//require_once(__DIR__.'/classes/Model.php');
-//$app['model'] = $app->share(function() use ($app) {
-//    return new Model($app);
-//});
+$app['model'] = $app->share(function() use ($app) {
+    return new Model($app);
+});
 
 return $app;

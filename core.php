@@ -6,7 +6,7 @@ require_once(__DIR__.'/classes/Model.php');
  * Configuration de l'application
  */
 $app = new Eirbware\Application(array(
-    'debug' => true,
+    'debug' => (preg_match('#^/net/dev#', __DIR__)==1),
     'user.object' => true,
 ));
 
